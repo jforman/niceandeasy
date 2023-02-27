@@ -1,0 +1,11 @@
+{{ define "main" }}
+<div class="d-flex justify-content-center">
+        <div class="p-5 m-5">
+            {{ range .Site.Params.social }}
+            <a href="{{ .url }}" {{ .html_attributes | safeHTMLAttr }}>
+                <i class="bi-{{ .icon }}" style="font-size: 2em;"></i>
+            </a>
+            {{ end }}
+        </div>
+</div>
+{{ end }}

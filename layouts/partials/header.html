@@ -1,0 +1,17 @@
+  <div class="row">
+    <div class="col-lg-4 text-start">
+      {{ .Site.Title }}
+    </div>
+    <div class="col-lg-8 text-end">
+      {{ range .Site.Menus.main }}
+      {{ $currentPage := . }}
+      <a href="{{.URL}}">
+        {{ $text := print .Name | safeHTML }}
+        {{ $text }}
+      </a>
+      {{ end}}
+    </div>
+  </div>
+<div class="row">
+    <div class="col"><hr></div>
+</div>
