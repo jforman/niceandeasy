@@ -1,26 +1,32 @@
 {{ define "main" }}
 <div class="row">
-  <div class="col-lg-2"></div>
-  <div class="col">
-    <h2 id="title">{{ .Title }}</h2>
+  <div class="col-1">
   </div>
-  <div class="col-lg-2"></div>
+  <div class="col-10">
+      {{ .Title }}
+  </div>
+  <div class="col-1"></div>
 </div>
 
 <div class="row">
-  <div class="col-lg-2"></div>
-  <div class="col">
-    {{ .Date.Format "Jan 2, 2006" }}
+  <div class="col-1">
   </div>
-  <div class="col-lg-2"></div>
+  <div class="col-10">
+    <div class="text-{{ .Site.Params.date_color | default "black" }}">
+      {{ .Date.Format "Jan 2, 2006" }}
+    </div>      
+  </div>
+
+  <div class="col-1"></div>
 </div>
-<br><br>
+
 <div class="row">
-  <div class="col-lg-2"></div>
-  <div class="col">
-    {{ .Content }}
+  <div class="col-1">
   </div>
-  <div class="col-lg-2"></div>
+  <div class="col-10">
+  {{ .Content }}
   {{ partial "mermaid.html" . }}
+<div class="col-1"></div>
 </div>
+
 {{ end }}

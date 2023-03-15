@@ -2,19 +2,19 @@
 
   {{ range (where .Site.RegularPages "Type" "in" (slice "posts")).GroupByDate "2006" }}
     <div class="row">
-      <div class="col-lg-2"></div>
+      <div class="col-2"></div>
       <div class="col"><h2>{{ .Key }}</h2></div>
     </div>
     {{ range .Pages }}
     <div class="row">
-      <div class="col-lg-2"></div>
-      <div class="col-lg-6">
+      <div class="col-2"></div>
+      <div class="col-6">
         <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
       </div>
-      <div class="col text-end">
+      <div class="col text-end text-secondary">
         {{ .Date.Format (.Site.Params.dateFormat | default "January 2" ) }}
       </div>
-      <div class="col-lg-2"></div>
+      <div class="col-2"></div>
     </div>
     {{ end }}
   {{ end }}
