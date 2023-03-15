@@ -1,0 +1,7 @@
+<ul class="list-inline">
+    {{ range .Site.Params.social }}
+    <li class="list-inline-item"><a href="{{ .url }}" {{ .html_attributes | safeHTMLAttr }}>
+        <i class="bi-{{ .icon }}" style="font-size: 2em;"></i>
+    </a></li>
+    {{ end }}
+    </ul>

@@ -2,6 +2,9 @@
           <div class="col"></div>
           <div class="text-center col">
                 These words are current as of {{ now.Format "2006" }}.
+                {{ if not .IsHome }}
+                  {{- partial "socialicons.html" . -}}
+                {{ end }}
           </div>
           <div class="col"></div>
         </div>
