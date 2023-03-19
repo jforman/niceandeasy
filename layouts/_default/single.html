@@ -18,8 +18,12 @@
 <div class="row">
   <div class="col-1"></div>
   <div class="col-10">
-    {{ .Content }}
-    {{ partial "mermaid.html" . }}
+    <div class="card">
+      <div class="card-body">
+        {{ .Content }}
+        {{ partial "mermaid.html" . }}
+      </div>
+    </div>
   </div>
   <div class="col-1"></div>
 </div>
